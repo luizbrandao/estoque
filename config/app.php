@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://awesome.dev/estoque/public',
+    'url' => 'http://localhost',
 
     /*
     |--------------------------------------------------------------------------

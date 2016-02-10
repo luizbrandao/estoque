@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('produtos', 'ProdutoController@lista');
+Route::resource('produtos', 'ProdutoController');
 Route::get('produtos/json', 'ProdutoController@listaJson');
 Route::get('produtos/novo', 'ProdutoController@novo');
 Route::get('produtos/remove/{id}', 'ProdutoController@remove')->where('id', '[0-9]+');
