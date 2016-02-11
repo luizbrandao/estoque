@@ -90,7 +90,11 @@ class ParserTest extends \PHPUnit_Framework_TestCase
 
     public function testEndOfTheDocumentMarker()
     {
+<<<<<<< HEAD
         $yaml = <<<'EOF'
+=======
+        $yaml = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 --- %YAML:1.0
 foo
 ...
@@ -426,6 +430,7 @@ foo: !!php/object:O:30:"Symfony\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
 bar: 1
 EOF;
         $this->assertEquals(array('foo' => new B(), 'bar' => 1), $this->parser->parse($input, false, true), '->parse() is able to parse objects');
+<<<<<<< HEAD
 
         $input = <<<EOF
 foo: !php/object:O:30:"Symfony\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
@@ -439,6 +444,17 @@ EOF;
      */
     public function testObjectSupportDisabledButNoExceptions($input)
     {
+=======
+    }
+
+    public function testObjectSupportDisabledButNoExceptions()
+    {
+        $input = <<<EOF
+foo: !!php/object:O:30:"Symfony\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}
+bar: 1
+EOF;
+
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
         $this->assertEquals(array('foo' => null, 'bar' => 1), $this->parser->parse($input), '->parse() does not parse objects');
     }
 
@@ -464,6 +480,7 @@ EOF;
         $this->assertEquals('cat', $result->fiz);
     }
 
+<<<<<<< HEAD
     public function testObjectForMapIsAppliedAfterParsing()
     {
         $expected = new \stdClass();
@@ -497,6 +514,14 @@ EOF;
             'yaml-tag' => array($yamlTag),
             'local-tag' => array($localTag),
         );
+=======
+    /**
+     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     */
+    public function testObjectsSupportDisabledWithExceptions()
+    {
+        $this->parser->parse('foo: !!php/object:O:30:"Symfony\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}', true, false);
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
     }
 
     /**
@@ -526,7 +551,11 @@ EOF;
      */
     public function testUnindentedCollectionException()
     {
+<<<<<<< HEAD
         $yaml = <<<'EOF'
+=======
+        $yaml = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 
 collection:
 -item1
@@ -543,7 +572,11 @@ EOF;
      */
     public function testShortcutKeyUnindentedCollectionException()
     {
+<<<<<<< HEAD
         $yaml = <<<'EOF'
+=======
+        $yaml = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 
 collection:
 -  key: foo
@@ -560,7 +593,11 @@ EOF;
      */
     public function testMultipleDocumentsNotSupportedException()
     {
+<<<<<<< HEAD
         Yaml::parse(<<<'EOL'
+=======
+        Yaml::parse(<<<EOL
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 # Ranking of 1998 home runs
 ---
 - Mark McGwire
@@ -580,7 +617,11 @@ EOL
      */
     public function testSequenceInAMapping()
     {
+<<<<<<< HEAD
         Yaml::parse(<<<'EOF'
+=======
+        Yaml::parse(<<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 yaml:
   hash: me
   - array stuff
@@ -593,7 +634,11 @@ EOF
      */
     public function testMappingInASequence()
     {
+<<<<<<< HEAD
         Yaml::parse(<<<'EOF'
+=======
+        Yaml::parse(<<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 yaml:
   - array stuff
   hash: me
@@ -660,7 +705,11 @@ EOD;
 
     public function testEmptyValue()
     {
+<<<<<<< HEAD
         $input = <<<'EOF'
+=======
+        $input = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 hash:
 EOF;
 
@@ -678,7 +727,11 @@ EOF;
                     'class' => 'Bar',
                 ),
             ),
+<<<<<<< HEAD
         ), Yaml::parse(<<<'EOF'
+=======
+        ), Yaml::parse(<<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 # comment 1
 services:
 # comment 2
@@ -695,7 +748,11 @@ EOF
 
     public function testStringBlockWithComments()
     {
+<<<<<<< HEAD
         $this->assertEquals(array('content' => <<<'EOT'
+=======
+        $this->assertEquals(array('content' => <<<EOT
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 # comment 1
 header
 
@@ -706,7 +763,11 @@ header
 
 footer # comment3
 EOT
+<<<<<<< HEAD
         ), Yaml::parse(<<<'EOF'
+=======
+        ), Yaml::parse(<<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 content: |
     # comment 1
     header
@@ -723,7 +784,11 @@ EOF
 
     public function testFoldedStringBlockWithComments()
     {
+<<<<<<< HEAD
         $this->assertEquals(array(array('content' => <<<'EOT'
+=======
+        $this->assertEquals(array(array('content' => <<<EOT
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 # comment 1
 header
 
@@ -734,7 +799,11 @@ header
 
 footer # comment3
 EOT
+<<<<<<< HEAD
         )), Yaml::parse(<<<'EOF'
+=======
+        )), Yaml::parse(<<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 -
     content: |
         # comment 1
@@ -754,7 +823,11 @@ EOF
     {
         $this->assertEquals(array(array(
             'title' => 'some title',
+<<<<<<< HEAD
             'content' => <<<'EOT'
+=======
+            'content' => <<<EOT
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 # comment 1
 header
 
@@ -765,7 +838,11 @@ header
 
 footer # comment3
 EOT
+<<<<<<< HEAD
         )), Yaml::parse(<<<'EOF'
+=======
+        )), Yaml::parse(<<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 -
     title: some title
     content: |
@@ -794,7 +871,11 @@ EOF
             'map' => array('key' => 'var-value'),
             'list_in_map' => array('key' => array('var-value')),
             'map_in_map' => array('foo' => array('bar' => 'var-value')),
+<<<<<<< HEAD
         ), Yaml::parse(<<<'EOF'
+=======
+        ), Yaml::parse(<<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 var:  &var var-value
 scalar: *var
 list: [ *var ]
@@ -810,7 +891,11 @@ EOF
 
     public function testYamlDirective()
     {
+<<<<<<< HEAD
         $yaml = <<<'EOF'
+=======
+        $yaml = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 %YAML 1.2
 ---
 foo: 1
@@ -821,7 +906,11 @@ EOF;
 
     public function testFloatKeys()
     {
+<<<<<<< HEAD
         $yaml = <<<'EOF'
+=======
+        $yaml = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 foo:
     1.2: "bar"
     1.3: "baz"
@@ -870,9 +959,13 @@ EOT;
 
     public function getCommentLikeStringInScalarBlockData()
     {
+<<<<<<< HEAD
         $tests = array();
 
         $yaml = <<<'EOT'
+=======
+        $yaml1 = <<<EOT
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 pages:
     -
         title: some title
@@ -887,11 +980,19 @@ pages:
 
             footer # comment3
 EOT;
+<<<<<<< HEAD
         $expected = array(
             'pages' => array(
                 array(
                     'title' => 'some title',
                     'content' => <<<'EOT'
+=======
+        $expected1 = array(
+            'pages' => array(
+                array(
+                    'title' => 'some title',
+                    'content' => <<<EOT
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 # comment 1
 header
 
@@ -906,9 +1007,14 @@ EOT
                 ),
             ),
         );
+<<<<<<< HEAD
         $tests[] = array($yaml, $expected);
 
         $yaml = <<<'EOT'
+=======
+
+        $yaml2 = <<<EOT
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 test: |
     foo
     # bar
@@ -923,8 +1029,13 @@ collection:
         # bar
         baz
 EOT;
+<<<<<<< HEAD
         $expected = array(
             'test' => <<<'EOT'
+=======
+        $expected2 = array(
+            'test' => <<<EOT
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 foo
 # bar
 baz
@@ -933,7 +1044,11 @@ EOT
             ,
             'collection' => array(
                 array(
+<<<<<<< HEAD
                     'one' => <<<'EOT'
+=======
+                    'one' => <<<EOT
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 foo
 # bar
 baz
@@ -941,7 +1056,11 @@ EOT
                     ,
                 ),
                 array(
+<<<<<<< HEAD
                     'two' => <<<'EOT'
+=======
+                    'two' => <<<EOT
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 foo
 # bar
 baz
@@ -950,6 +1069,7 @@ EOT
                 ),
             ),
         );
+<<<<<<< HEAD
         $tests[] = array($yaml, $expected);
 
         $yaml = <<<EOT
@@ -991,6 +1111,13 @@ EOT;
         $tests[] = array($yaml, $expected);
 
         return $tests;
+=======
+
+        return array(
+            array($yaml1, $expected1),
+            array($yaml2, $expected2),
+        );
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
     }
 
     public function testBlankLinesAreParsedAsNewLinesInFoldedBlocks()

@@ -13,7 +13,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'debug' => env('APP_DEBUG', true),
+=======
+    'debug' => env('APP_DEBUG'),
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +30,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'url' => 'http://estoque.dev',
+=======
+    'url' => 'http://localhost',
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +86,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'key' => env('APP_KEY', ''),
+=======
+    'key' => env('APP_KEY', 'SomeRandomString'),
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 
     'cipher' => 'AES-256-CBC',
 

@@ -54,7 +54,11 @@ class DumperTest extends \PHPUnit_Framework_TestCase
     {
         $this->dumper->setIndentation(7);
 
+<<<<<<< HEAD
         $expected = <<<'EOF'
+=======
+        $expected = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 '': bar
 foo: '#bar'
 'foo''bar': {  }
@@ -103,13 +107,21 @@ EOF;
 
     public function testInlineLevel()
     {
+<<<<<<< HEAD
         $expected = <<<'EOF'
+=======
+        $expected = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 { '': bar, foo: '#bar', 'foo''bar': {  }, bar: [1, foo], foobar: { foo: bar, bar: [1, foo], foobar: { foo: bar, bar: [1, foo] } } }
 EOF;
         $this->assertEquals($expected, $this->dumper->dump($this->array, -10), '->dump() takes an inline level argument');
         $this->assertEquals($expected, $this->dumper->dump($this->array, 0), '->dump() takes an inline level argument');
 
+<<<<<<< HEAD
         $expected = <<<'EOF'
+=======
+        $expected = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 '': bar
 foo: '#bar'
 'foo''bar': {  }
@@ -119,7 +131,11 @@ foobar: { foo: bar, bar: [1, foo], foobar: { foo: bar, bar: [1, foo] } }
 EOF;
         $this->assertEquals($expected, $this->dumper->dump($this->array, 1), '->dump() takes an inline level argument');
 
+<<<<<<< HEAD
         $expected = <<<'EOF'
+=======
+        $expected = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 '': bar
 foo: '#bar'
 'foo''bar': {  }
@@ -134,7 +150,11 @@ foobar:
 EOF;
         $this->assertEquals($expected, $this->dumper->dump($this->array, 2), '->dump() takes an inline level argument');
 
+<<<<<<< HEAD
         $expected = <<<'EOF'
+=======
+        $expected = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 '': bar
 foo: '#bar'
 'foo''bar': {  }
@@ -153,7 +173,11 @@ foobar:
 EOF;
         $this->assertEquals($expected, $this->dumper->dump($this->array, 3), '->dump() takes an inline level argument');
 
+<<<<<<< HEAD
         $expected = <<<'EOF'
+=======
+        $expected = <<<EOF
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 '': bar
 foo: '#bar'
 'foo''bar': {  }
@@ -180,7 +204,11 @@ EOF;
     {
         $dump = $this->dumper->dump(array('foo' => new A(), 'bar' => 1), 0, 0, false, true);
 
+<<<<<<< HEAD
         $this->assertEquals('{ foo: !php/object:O:30:"Symfony\Component\Yaml\Tests\A":1:{s:1:"a";s:3:"foo";}, bar: 1 }', $dump, '->dump() is able to dump objects');
+=======
+        $this->assertEquals('{ foo: !!php/object:O:30:"Symfony\Component\Yaml\Tests\A":1:{s:1:"a";s:3:"foo";}, bar: 1 }', $dump, '->dump() is able to dump objects');
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
     }
 
     public function testObjectSupportDisabledButNoExceptions()

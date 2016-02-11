@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('conteudo')
-
 <div class="col-md-12">
   <h1>Registro</h1>
   <form method="post" action="/estoque/public/auth/register">

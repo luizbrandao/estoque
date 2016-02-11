@@ -34,6 +34,7 @@ to a newer version of PHP immediately.
 
     composer require paragonie/random_compat
 
+<<<<<<< HEAD
 **Signed PHP Archive:**
 
 As of version 1.2.0, we also ship an ECDSA-signed PHP Archive with each stable 
@@ -52,6 +53,13 @@ release on Github.
 1. Download [a stable release](https://github.com/paragonie/random_compat/releases/latest).
 2. Extract the files into your project.
 3. `require_once "/path/to/random_compat/lib/random.php";`
+=======
+**Manually:**
+
+1. Download [a stable release](https://github.com/paragonie/random_compat/releases/latest).
+2. Extract the files into your project.
+3. `require_once "/path/to/random_compat/lib/random.php";
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 
 ## Usage
 
@@ -160,7 +168,10 @@ weren't for the contributions of the following individuals:
 * [@narfbg (Andrey Andreev)](https://github.com/narfbg)
 * [@nicolas-grekas (Nicolas Grekas)](https://github.com/nicolas-grekas)
 * [@oittaa](https://github.com/oittaa)
+<<<<<<< HEAD
 * [@oucil (Kevin Farley)](https://github.com/oucil)
+=======
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 * [@redragonx (Stephen Chavez)](https://github.com/redragonx)
 * [@rchouinard (Ryan Chouinard)](https://github.com/rchouinard)
 * [@SammyK (Sammy Kaye Powers)](https://github.com/SammyK)

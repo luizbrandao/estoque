@@ -105,7 +105,11 @@ class Inline
                 return 'null';
             case is_object($value):
                 if ($objectSupport) {
+<<<<<<< HEAD
                     return '!php/object:'.serialize($value);
+=======
+                    return '!!php/object:'.serialize($value);
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
                 }
 
                 if ($exceptionOnInvalidType) {
@@ -476,6 +480,7 @@ class Inline
                         return (string) substr($scalar, 5);
                     case 0 === strpos($scalar, '! '):
                         return (int) self::parseScalar(substr($scalar, 2));
+<<<<<<< HEAD
                     case 0 === strpos($scalar, '!php/object:'):
                         if (self::$objectSupport) {
                             return unserialize(substr($scalar, 12));
@@ -486,6 +491,8 @@ class Inline
                         }
 
                         return;
+=======
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
                     case 0 === strpos($scalar, '!!php/object:'):
                         if (self::$objectSupport) {
                             return unserialize(substr($scalar, 13));

@@ -2,7 +2,6 @@
 
 @section('conteudo')
 <h1>Atualizando Produto</h1>
-
 <form class="form" action="/estoque/public/produtos/update" method="post">
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
   <input type="hidden" name="id" value="{!! $p->id !!}">

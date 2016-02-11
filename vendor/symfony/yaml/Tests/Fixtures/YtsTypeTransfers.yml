@@ -182,8 +182,13 @@ php: |
     array(
       'zero' => 0,
       'simple' => 12,
+<<<<<<< HEAD
       'one-thousand' => 1000.0,
       'negative one-thousand' => -1000.0
+=======
+      'one-thousand' => 1000,
+      'negative one-thousand' => -1000
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
     )
 ---
 test: Integers as Map Keys

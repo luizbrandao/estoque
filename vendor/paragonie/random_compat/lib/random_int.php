@@ -55,7 +55,10 @@ function random_int($min, $max)
             'random_int(): $min must be an integer'
         );
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
     try {
         $max = RandomCompat_intval($max);
     } catch (TypeError $ex) {
@@ -74,7 +77,10 @@ function random_int($min, $max)
             'Minimum value must be less than or equal to the maximum value'
         );
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
     if ($max === $min) {
         return $min;
     }
@@ -100,7 +106,10 @@ function random_int($min, $max)
      * Test for integer overflow:
      */
     if (!is_int($range)) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
         /**
          * Still safely calculate wider ranges.
          * Provided by @CodesInChaos, @oittaa
@@ -114,9 +123,13 @@ function random_int($min, $max)
          */
         $bytes = PHP_INT_SIZE;
         $mask = ~0;
+<<<<<<< HEAD
 
     } else {
 
+=======
+    } else {
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
         /**
          * $bits is effectively ceil(log($range, 2)) without dealing with 
          * type juggling
@@ -186,6 +199,9 @@ function random_int($min, $max)
          * then try again.
          */
     } while (!is_int($val) || $val > $max || $val < $min);
+<<<<<<< HEAD
 
+=======
+>>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
     return (int) $val;
 }
