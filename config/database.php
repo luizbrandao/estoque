@@ -56,10 +56,7 @@ return [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
             'database'  => env('DB_DATABASE', 'estoque'),
-<<<<<<< HEAD
             'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
-=======
->>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
             'username'  => env('DB_USERNAME', 'postgres'),
             'password'  => env('DB_PASSWORD', '123'),
             'charset'   => 'utf8',

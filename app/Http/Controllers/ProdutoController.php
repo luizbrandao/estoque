@@ -16,11 +16,7 @@ class ProdutoController extends Controller
 {
     public function __construct(){
       //$this->middleware('nosso-middleware');
-<<<<<<< HEAD
       $this->middleware('auth', ['only' => ['adiciona', 'novo', 'remove']]);
-=======
-      $this->middleware('auth', ['only' => ['adiciona', 'remove']]);
->>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
     }
 
     public function update(Request $request)

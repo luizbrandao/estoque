@@ -795,7 +795,6 @@
         },
         {
             "name": "paragonie/random_compat",
-<<<<<<< HEAD
             "version": "v1.2.0",
             "source": {
                 "type": "git",
@@ -806,18 +805,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/paragonie/random_compat/zipball/b0e69d10852716b2ccbdff69c75c477637220790",
                 "reference": "b0e69d10852716b2ccbdff69c75c477637220790",
-=======
-            "version": "1.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "e6f80ab77885151908d0ec743689ca700886e8b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/e6f80ab77885151908d0ec743689ca700886e8b0",
-                "reference": "e6f80ab77885151908d0ec743689ca700886e8b0",
->>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
                 "shasum": ""
             },
             "require": {
@@ -852,11 +839,7 @@
                 "pseudorandom",
                 "random"
             ],
-<<<<<<< HEAD
             "time": "2016-02-06 03:52:05"
-=======
-            "time": "2016-01-29 16:19:52"
->>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
         },
         {
             "name": "psr/log",
@@ -3069,7 +3052,6 @@
         },
         {
             "name": "symfony/yaml",
-<<<<<<< HEAD
             "version": "v3.0.2",
             "source": {
                 "type": "git",
@@ -3080,18 +3062,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/yaml/zipball/3cf0709d7fe936e97bee9e954382e449003f1d9a",
                 "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a",
-=======
-            "version": "v3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3df409958a646dad2bc5046c3fb671ee24a1a691",
-                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691",
->>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
                 "shasum": ""
             },
             "require": {
@@ -3127,11 +3097,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "time": "2016-02-02 13:44:19"
-=======
-            "time": "2015-12-26 13:39:53"
->>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
         }
     ],
     "aliases": [],

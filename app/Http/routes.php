@@ -11,11 +11,7 @@
 |
 */
 
-<<<<<<< HEAD
 Route::get('produtos', 'ProdutoController@lista');
-=======
-Route::resource('produtos', 'ProdutoController');
->>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 Route::get('produtos/json', 'ProdutoController@listaJson');
 Route::get('produtos/novo', 'ProdutoController@novo');
 Route::get('produtos/remove/{id}', 'ProdutoController@remove')->where('id', '[0-9]+');
@@ -42,9 +38,5 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::post('auth/create', 'Auth\AuthController@postRegister');
 
 Route::get('/', function () {
-<<<<<<< HEAD
-    return view('welcome');
-=======
     return view('home.blade.php');
->>>>>>> dbf497df682cf8a10c6f6b74f4c48ecc0405f0f3
 });
