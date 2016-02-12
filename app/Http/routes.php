@@ -19,6 +19,7 @@ Route::get('produtos/mostra/{id}', 'ProdutoController@mostra')->where('id', '[0-
 Route::get('produtos/atualizar/{id}', 'ProdutoController@atualizar')->where('id', '[0-9]+');
 Route::post('produtos/adiciona', 'ProdutoController@adiciona');
 Route::post('produtos/update', 'ProdutoController@update');
+Route::post('produtos/buscar/{nome}', 'ProdutoController@buscar')->where('nome', '[a-zA-Z]+')->middleware('cors');
 Route::get('home', 'HomeController@index');
 Route::get('/login', 'LoginController@login');
 

@@ -66,7 +66,6 @@ class ProdutoController extends Controller
     }
 
     public function adiciona(ProdutosRequest $request){
-
       $validator = Validator::make(
         ['nome' => $request->input('nome')],
         ['nome' => 'required|min:5']
@@ -86,5 +85,12 @@ class ProdutoController extends Controller
 
       $produto->delete();
       return redirect()->action('ProdutoController@lista');
+    }
+
+    public function buscar(Request $request){
+      $nome = $request->input('nome');
+      $produto = Produto::where('nome','LIKE',$nome)->get();
+
+      return response()->json($produto);
     }
 }
