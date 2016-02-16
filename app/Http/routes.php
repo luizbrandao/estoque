@@ -12,10 +12,11 @@
 */
 
 Route::get('produtos', 'ProdutoController@lista');
-Route::get('produtos/json', 'ProdutoController@listaJson');
+Route::post('produtos/json', 'ProdutoController@listaJson')->middleware('cors');
 Route::get('produtos/novo', 'ProdutoController@novo');
 Route::get('produtos/remove/{id}', 'ProdutoController@remove')->where('id', '[0-9]+');
 Route::get('produtos/mostra/{id}', 'ProdutoController@mostra')->where('id', '[0-9]+');
+Route::post('produtos/mostra/{id}/json', 'ProdutoController@mostraProdutoJson')->where('id', '[0-9]+')->middleware('cors');
 Route::get('produtos/atualizar/{id}', 'ProdutoController@atualizar')->where('id', '[0-9]+');
 Route::post('produtos/adiciona', 'ProdutoController@adiciona');
 Route::post('produtos/update', 'ProdutoController@update');

@@ -16,7 +16,7 @@ class ProdutoController extends Controller
 {
     public function __construct(){
       //$this->middleware('nosso-middleware');
-      $this->middleware('auth', ['only' => ['adiciona', 'novo', 'remove']]);
+      $this->middleware('auth', ['only' => ['adiciona', 'novo', 'remove','atualizar' ,'update']]);
     }
 
     public function update(Request $request)
@@ -45,6 +45,12 @@ class ProdutoController extends Controller
 
     // parametro $request passado por injecao de dependencia
     public function mostra(Request $request){
+      $p = $this->buscaProdutoId($request);
+
+      return view('produto.detalhes')->with('p', $p);
+    }
+
+    public function buscaProdutoId(Request $request){
       $id = $request->route('id');
 
       $p = Produto::find($id);
@@ -53,7 +59,13 @@ class ProdutoController extends Controller
         return 'Esse produto não existe!';
       }
 
-      return view('produto.detalhes')->with('p', $p);
+      return $p;
+    }
+
+    public function mostraProdutoJson(Request $request){
+      $p = $this->buscaProdutoId($request);
+
+      return response()->json($p);
     }
 
     public function novo(){
@@ -87,9 +99,9 @@ class ProdutoController extends Controller
       return redirect()->action('ProdutoController@lista');
     }
 
-    public function buscar(Request $request){
-      $nome = $request->input('nome');
-      $produto = Produto::where('nome','LIKE',$nome)->get();
+    public function buscar($nome){
+
+      $produto = Produto::where('nome','=',$nome)->get();
 
       return response()->json($produto);
     }
