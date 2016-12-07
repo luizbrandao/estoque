@@ -17,24 +17,34 @@
       </p>
     </div>
   @else
-    @foreach ($produtos as $p)
-      <tr class="{!! $p->quantidade <=5 ? 'danger': '' !!} ">
-        <td>{!! $p->nome !!}</td>
-        <td>{!! $p->valor !!}</td>
-        <td>{!! $p->descricao !!}</td>
-        <td>{!! $p->quantidade !!}</td>
-        <td>
-          <a href="/estoque/public/produtos/mostra/<?= $p->id ?>" class="btn btn-primary">
-            <span class="glyphicon glyphicon-search"></span>&nbsp;Visualizar
-          </a>
-        </td>
-        <td>
-          <a href="/estoque/public/produtos/remove/<?= $p->id ?>" class="btn btn-danger">
-            <span class="glyphicon glyphicon-trash" ></span>&nbsp; Remover
-          </a>
-        </td>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Valor</th>
+        <th>Descrição</th>
+        <th>Quantidade</th>
       </tr>
-    @endforeach
+    </thead>
+    <tbody>
+      @foreach ($produtos as $p)
+        <tr class="{!! $p->quantidade <=5 ? 'danger': '' !!} ">
+          <td>{!! $p->nome !!}</td>
+          <td>{!! $p->valor !!}</td>
+          <td>{!! $p->descricao !!}</td>
+          <td>{!! $p->quantidade !!}</td>
+          <td>
+            <a href="/public/produtos/mostra/<?= $p->id ?>" class="btn btn-primary">
+              <span class="glyphicon glyphicon-search"></span>&nbsp;Visualizar
+            </a>
+          </td>
+          <td>
+            <a href="/public/produtos/remove/<?= $p->id ?>" class="btn btn-danger">
+              <span class="glyphicon glyphicon-trash" ></span>&nbsp; Remover
+            </a>
+          </td>
+        </tr>
+      @endforeach
+    </tbody>
   @endif
 </table>
 <h4>

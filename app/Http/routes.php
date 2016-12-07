@@ -39,6 +39,8 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::post('auth/create', 'Auth\AuthController@postRegister');
 
-Route::get('/', function () {
+Route::get('/', 'ProdutoController@lista'); /*
+function () {
     return view('home.blade.php');
-});
+}
+*/

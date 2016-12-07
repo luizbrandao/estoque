@@ -15,7 +15,6 @@ use Validator;
 class ProdutoController extends Controller
 {
     public function __construct(){
-      //$this->middleware('nosso-middleware');
       $this->middleware('auth', ['only' => ['adiciona', 'novo', 'remove','atualizar' ,'update']]);
     }
 
@@ -100,7 +99,6 @@ class ProdutoController extends Controller
     }
 
     public function buscar($nome){
-
       $produto = Produto::where('nome','=',$nome)->get();
 
       return response()->json($produto);
